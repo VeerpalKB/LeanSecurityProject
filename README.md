@@ -2,19 +2,19 @@
 
 ## Formal Methods for Security Verification
 
-## Project Overview
+### Project Overview
 
 This project investigates the use of formal methods, specifically the Lean 4 theorem prover, to model and verify security properties in software systems. The primary aim is to demonstrate how mathematically rigorous verification techniques can be integrated into a practical system to improve confidence in critical security properties such as access control.
 
 The project forms part of a Final Year Project and is being developed incrementally, with this repository representing the current Interim Progress Demonstration (IPD) stage.
 
-## Motivation
+### Motivation
 
 Traditional software security testing relies heavily on dynamic testing and manual code reviews, which can miss subtle logical flaws. Formal methods provide a way to prove security properties mathematically, offering stronger guarantees about correctness.
 
 However, formal methods are often seen as impractical or inaccessible. This project explores how Lean-based formal verification can be combined with a modern backend and frontend to make verification results usable and understandable in a real-world context.
 
-## Project Objectives
+### Project Objectives
 
 - Model security properties (e.g., access control) using Lean 4
 
@@ -31,7 +31,7 @@ However, formal methods are often seen as impractical or inaccessible. This proj
 
 The system is structured into three main components:
 
-## 1. Formal Verification Layer (Lean 4)
+### 1. Formal Verification Layer (Lean 4)
 
 - Implements security models and properties using Lean
 
@@ -39,7 +39,7 @@ The system is structured into three main components:
 
 - Produces verification results deterministically
 
-## 2. Backend Layer (Node.js)
+### 2. Backend Layer (Node.js)
 
 - Acts as a bridge between the Lean verification layer and the frontend
 
@@ -47,7 +47,7 @@ The system is structured into three main components:
 
 - Designed to keep formal logic independent from application logic
 
-## 3. Frontend Layer (Web Interface)
+### 3. Frontend Layer (Web Interface)
 
 - Displays verification outcomes in a user-friendly format
 
@@ -56,7 +56,7 @@ The system is structured into three main components:
 This layered approach reflects best practice in system design and aligns with the architectural design proposed in the PPRS.
 
 
-## Technologies Used
+### Technologies Used
 
 Component	                         Technology
 Formal Verification	                 Lean 4
@@ -68,6 +68,7 @@ Version Control	                  Git & GitHub
 Note: JavaScript is used strictly for system integration and presentation. All security reasoning and verification logic is implemented in Lean.
 
 ## Repository Structure
+
 LeanSecurityProject/
 │
 ├── backend/
@@ -87,7 +88,7 @@ LeanSecurityProject/
 
 
 ## Current Progress (IPD Stage)
-## Implemented
+### Implemented
 
 - Formal modelling of an access control security property
 
@@ -99,7 +100,7 @@ LeanSecurityProject/
 
 - Clean version-controlled repository with appropriate .gitignore
 
-## Pending / Future Work
+### Pending / Future Work
 
 - Expansion to additional security properties
 
@@ -110,8 +111,8 @@ LeanSecurityProject/
 - Extended evaluation and analysis of verification results
 
 
-## How to Run the Project (Prototype)
-Prerequisites
+### How to Run the Project (Prototype)
+### Prerequisites
 
 Lean 4
 
@@ -120,23 +121,23 @@ Lake
 Node.js
 
 
-## Build Lean Project
+### Build Lean Project
 lake build
 
-## Run Backend Server
+### Run Backend Server
 cd backend
 node server.js
 
-## Access Frontend
+### Access Frontend
 Open the frontend interface in a web browser (or via the configured server endpoint).
 
 
-## Academic Context
+### Academic Context
 
 This project is developed in accordance with the approved Project Proposal and Requirements Specification (PPRS). The current implementation represents demonstrable progress toward the final system and focuses on validating architectural decisions, tooling choices, and feasibility.
 
 
-## Author
+### Author
 
 Veerpal Birdi
 Final Year Undergraduate Project
