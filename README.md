@@ -27,7 +27,7 @@ However, formal methods are often seen as impractical or inaccessible. This proj
 - Demonstrate a clear separation between formal verification logic and system implementation
 
 
-## System Architecture
+### System Architecture
 
 The system is structured into three main components:
 
