@@ -1,1 +1,143 @@
 # LeanSecurityProject
+
+## Formal Methods for Security Verification
+
+## Project Overview
+
+This project investigates the use of formal methods, specifically the Lean 4 theorem prover, to model and verify security properties in software systems. The primary aim is to demonstrate how mathematically rigorous verification techniques can be integrated into a practical system to improve confidence in critical security properties such as access control.
+
+The project forms part of a Final Year Project and is being developed incrementally, with this repository representing the current Interim Progress Demonstration (IPD) stage.
+
+## Motivation
+
+Traditional software security testing relies heavily on dynamic testing and manual code reviews, which can miss subtle logical flaws. Formal methods provide a way to prove security properties mathematically, offering stronger guarantees about correctness.
+
+However, formal methods are often seen as impractical or inaccessible. This project explores how Lean-based formal verification can be combined with a modern backend and frontend to make verification results usable and understandable in a real-world context.
+
+## Project Objectives
+
+- Model security properties (e.g., access control) using Lean 4
+
+- Formally verify these properties using theorem proving
+
+- Expose verification results via a backend service
+
+- Present verification outputs through a simple frontend interface
+
+- Demonstrate a clear separation between formal verification logic and system implementation
+
+
+## System Architecture
+
+The system is structured into three main components:
+
+## 1. Formal Verification Layer (Lean 4)
+
+- Implements security models and properties using Lean
+
+- Encodes access control rules and verification logic
+
+- Produces verification results deterministically
+
+## 2. Backend Layer (Node.js)
+
+- Acts as a bridge between the Lean verification layer and the frontend
+
+- Executes verification processes and returns results
+
+- Designed to keep formal logic independent from application logic
+
+## 3. Frontend Layer (Web Interface)
+
+- Displays verification outcomes in a user-friendly format
+
+- Demonstrates how formal verification can be integrated into practical tools
+
+This layered approach reflects best practice in system design and aligns with the architectural design proposed in the PPRS.
+
+
+## Technologies Used
+
+Component	                         Technology
+Formal Verification	                 Lean 4
+Build Tool	                          Lake
+Backend Server	              Node.js (JavaScript)
+Frontend	                   HTML, CSS, JavaScript
+Version Control	                  Git & GitHub
+
+Note: JavaScript is used strictly for system integration and presentation. All security reasoning and verification logic is implemented in Lean.
+
+## Repository Structure
+LeanSecurityProject/
+│
+├── backend/
+│   ├── SecurityVerification.lean
+│   ├── AccessControl.lean
+│   └── server.js
+│
+├── frontend/
+│   └── index.html
+│
+├── Main.lean
+├── LeanSecurityProject.lean
+├── lakefile.toml
+├── lean-toolchain
+├── README.md
+└── .gitignore
+
+
+## Current Progress (IPD Stage)
+## Implemented
+
+- Formal modelling of an access control security property
+
+- Lean-based verification logic
+
+- Backend server integration
+
+- End-to-end execution producing distinct verification outputs
+
+- Clean version-controlled repository with appropriate .gitignore
+
+## Pending / Future Work
+
+- Expansion to additional security properties
+
+- More complex policy models
+
+- Improved frontend visualisation
+
+- Extended evaluation and analysis of verification results
+
+
+## How to Run the Project (Prototype)
+Prerequisites
+
+Lean 4
+
+Lake
+
+Node.js
+
+
+## Build Lean Project
+lake build
+
+## Run Backend Server
+cd backend
+node server.js
+
+## Access Frontend
+Open the frontend interface in a web browser (or via the configured server endpoint).
+
+
+## Academic Context
+
+This project is developed in accordance with the approved Project Proposal and Requirements Specification (PPRS). The current implementation represents demonstrable progress toward the final system and focuses on validating architectural decisions, tooling choices, and feasibility.
+
+
+## Author
+
+Veerpal Birdi
+Final Year Undergraduate Project
+Formal Methods for Security Verification
