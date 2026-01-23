@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure System Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> Secure System Verification</h1>
+        <p>Select a security property to verify:</p>
+
+        <form id="verification-form">
+            <label for="property">Choose a property:</label>
+            <select id="property" name="property">
+                <option value="authentication">User Authentication</option>
+                <option value="access_control">Access Control</option>
+                <option value="encryption">Encryption Integrity</option>
+            </select>
+
+            <button type="button">Verify</button>
+        </form>
+
+<div class="output">
+  <p><strong>Output:</strong></p>
+  <p id="output">Waiting for verification...</p>
+</div>
+    </div>
+
+<script>
+  document.querySelector("button").onclick = async () => {
+    const property = document.querySelector("#property").value;
+
+    try {
+      const response = await fetch(`/verify?property=${property}`);
+      const data = await response.json();
+
+      document.getElementById("output").innerText = data.output;
+    } catch (error) {
+      document.getElementById("output").innerText =
+        "Verification service not available.";
+    }
+  };
+</script>
+
+</body>
+</html>

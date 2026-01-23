@@ -1,0 +1,12 @@
+name = "LeanSecurityProject"
+version = "0.1.0"
+
+[[lean_lib]]
+name = "LeanSecurityProject"
+
+[[lean_lib]]
+name = "backend"
+
+[[lean_exe]]
+name = "verify"
+root = "backend.Main"

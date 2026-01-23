@@ -1,0 +1,17 @@
+# ===== Lean / Lake =====
+.lake/
+*.olean
+*.ilean
+*.c
+*.json
+
+# ===== Node.js =====
+node_modules/
+
+# ===== Editor / OS =====
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
