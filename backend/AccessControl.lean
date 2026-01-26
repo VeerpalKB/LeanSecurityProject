@@ -37,10 +37,6 @@ theorem access_control_is_secure :
   intro u r
   unfold accessSecure
   intro h
-  match u, r with
-  | User.alice, Resource.fileA =>
-      exact Or.inl rfl
-  | User.bob, Resource.fileA =>
-      exact Or.inr rfl
-  | _, _ =>
-      cases h
+  cases u <;> cases r <;> simp [canAccess] at h
+  · exact Or.inl rfl
+  · exact Or.inr rfl
