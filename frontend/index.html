@@ -27,6 +27,12 @@
   <p><strong>Output:</strong></p>
   <p id="output">Waiting for verification...</p>
 </div>
+
+<div id="explanation-panel" style="display:none; margin-top:20px; padding:15px; border:1px solid #ccc;">
+  <p><strong>Verification Explanation:</strong></p>
+  <ul id="explanation-list"></ul>
+</div>
+
     </div>
 
 <script>
@@ -38,11 +44,56 @@
       const data = await response.json();
 
       document.getElementById("output").innerText = data.output;
+      showExplanation(property, data.output);
     } catch (error) {
       document.getElementById("output").innerText =
         "Verification service not available.";
     }
   };
+
+function showExplanation(property, output) {
+  const panel = document.getElementById("explanation-panel");
+  const list = document.getElementById("explanation-list");
+
+  list.innerHTML = "";
+  panel.style.display = "block";
+
+  // ACCESS CONTROL — VERIFIED
+  if (
+    property === "access_control" &&
+    output.toLowerCase().includes("verified")
+  ) {
+    const explanations = [
+      "✔ Property verified: Access Control Security",
+      "✔ Verified users: Alice, Bob",
+      "✖ Rejected users: Eve",
+      "✔ Reason: Only authorised users are permitted access to protected resources."
+    ];
+
+    explanations.forEach(text => {
+      const li = document.createElement("li");
+      li.innerText = text;
+      list.appendChild(li);
+    });
+
+    return;
+  }
+
+  // ACCESS CONTROL — FAILED (future-proof)
+  if (property === "access_control") {
+    const li = document.createElement("li");
+    li.innerText =
+      "✖ Access control property could not be verified.";
+    list.appendChild(li);
+    return;
+  }
+
+  // OTHER PROPERTIES (NOT IMPLEMENTED YET)
+  const li = document.createElement("li");
+  li.innerText =
+    "This security property is not yet implemented in the current prototype.";
+  list.appendChild(li);
+}
 </script>
 
 </body>
