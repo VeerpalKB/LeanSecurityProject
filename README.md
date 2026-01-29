@@ -126,11 +126,13 @@ lake build
 
 ### Run Backend Server
 cd backend
+
 node server.js
 
 ### Access Frontend
 Open the frontend interface in a web browser (or via the configured server endpoint).
 
+http://localhost:3000
 
 ### Academic Context
 
