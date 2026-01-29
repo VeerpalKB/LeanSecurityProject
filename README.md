@@ -58,17 +58,17 @@ This layered approach reflects best practice in system design and aligns with th
 
 ### Technologies Used
 
-Component	                         Technology
+Component	                                        Technology
 
-Formal Verification	                 Lean 4
+Formal Verification	                                Lean 4
 
-Build Tool	                          Lake
+Build Tool	                                         Lake
 
-Backend Server	              Node.js (JavaScript)
+Backend Server	                             Node.js (JavaScript)
 
-Frontend	                   HTML, CSS, JavaScript
+Frontend	                                   HTML, CSS, JavaScript
 
-Version Control	                  Git & GitHub
+Version Control	                                  Git & GitHub
 
 
 Note: JavaScript is used strictly for system integration and presentation. All security reasoning and verification logic is implemented in Lean.
