@@ -59,11 +59,17 @@ This layered approach reflects best practice in system design and aligns with th
 ### Technologies Used
 
 Component	                         Technology
+
 Formal Verification	                 Lean 4
+
 Build Tool	                          Lake
+
 Backend Server	              Node.js (JavaScript)
+
 Frontend	                   HTML, CSS, JavaScript
+
 Version Control	                  Git & GitHub
+
 
 Note: JavaScript is used strictly for system integration and presentation. All security reasoning and verification logic is implemented in Lean.
 
@@ -136,11 +142,14 @@ http://localhost:3000
 
 ### Academic Context
 
-This project is developed in accordance with the approved Project Proposal and Requirements Specification (PPRS). The current implementation represents demonstrable progress toward the final system and focuses on validating architectural decisions, tooling choices, and feasibility.
+This project is developed in accordance with the approved Project Proposal and Requirements Specification (PPRS). 
+The current implementation represents demonstrable progress toward the final system and focuses on validating architectural decisions, tooling choices, and feasibility.
 
 
 ### Author
 
 Veerpal Birdi
+
 Final Year Undergraduate Project
+
 Formal Methods for Security Verification
