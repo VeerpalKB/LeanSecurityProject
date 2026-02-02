@@ -9,8 +9,17 @@
 
 <body>
     <div class="container">
+
+    <!-- Main heading for the frontend interface of prototype -->
         <h1> Secure System Verification</h1>
+
+    <!-- Displays instruction to the user -->
         <p>Select a security property to verify:</p>
+
+    <!-- Verification form displays a drop-down menu, allowing the user to select one out of three 
+     security properties. 
+     At the IPD stage, Access Control is fully implemented, whilst User Authentication and 
+     Encryption Integrity are included for later implementation. -->
 
         <form id="verification-form">
             <label for="property">Choose a property:</label>
@@ -20,14 +29,21 @@
                 <option value="encryption">Encryption Integrity</option>
             </select>
 
+          <!-- Button is displayed and when clicked on, triggers the verification function.
+           This uses JavaScript to call the backend instead of submitting the form automatically.-->
             <button type="button">Verify</button>
         </form>
 
+<!-- This output code block is responsible for displaying the raw verification result 
+ returned by the backend. -->
 <div class="output">
   <p><strong>Output:</strong></p>
   <p id="output">Waiting for verification...</p>
 </div>
 
+<!-- This explanation-panel code block shows a human-readable explanation of the formal 
+ verification result.
+ This is hidden and is only shown after verification is executed.-->
 <div id="explanation-panel" style="display:none; margin-top:20px; padding:15px; border:1px solid #ccc;">
   <p><strong>Verification Explanation:</strong></p>
   <ul id="explanation-list"></ul>
@@ -36,38 +52,63 @@
     </div>
 
 <script>
+/**
+ * Event handler for the Verify button.
+ * 
+ * This sends a request to the backend verification endpoint and updates the UI
+ * based on the response.
+ * 
+ * */
   document.querySelector("button").onclick = async () => {
     const property = document.querySelector("#property").value;
 
     try {
+      // Calls the backend verification endpoint
       const response = await fetch(`/verify?property=${property}`);
       const data = await response.json();
 
+      // Displays the backend output
       document.getElementById("output").innerText = data.output;
+      
+      // Displays the explanation of the verification result
       showExplanation(property, data.output);
     } catch (error) {
+      // Error handling done here
       document.getElementById("output").innerText =
         "Verification service not available.";
     }
   };
 
+
+/**
+ * The showExplanation function is implemented here and is used to
+ * generate a human-readable explanation of the verification result.
+ * 
+ * This bridges formal verification and user understanding.
+ * 
+ * */
 function showExplanation(property, output) {
   const panel = document.getElementById("explanation-panel");
   const list = document.getElementById("explanation-list");
 
+  // Clears the previous explanation
   list.innerHTML = "";
   panel.style.display = "block";
 
-  // ACCESS CONTROL — VERIFIED
+  /** ACCESS CONTROL — VERIFIED CASE
+   * Linked directly to the Lean proof implemented in the formal verification
+   * layer.
+   * 
+   * */
   if (
     property === "access_control" &&
     output.toLowerCase().includes("verified")
   ) {
     const explanations = [
-      "✔ Property verified: Access Control Security",
-      "✔ Verified users: Alice, Bob",
-      "✖ Rejected users: Eve",
-      "✔ Reason: Only authorised users are permitted access to protected resources."
+      "Property verified: Access Control Security",
+      "Verified users: Alice, Bob",
+      "Rejected users: Eve",
+      "Reason: Only authorised users are permitted access to protected resources."
     ];
 
     explanations.forEach(text => {
@@ -79,16 +120,16 @@ function showExplanation(property, output) {
     return;
   }
 
-  // ACCESS CONTROL — FAILED (future-proof)
+  // ACCESS CONTROL — FAILED CASE (Included for future extensibility)
   if (property === "access_control") {
     const li = document.createElement("li");
     li.innerText =
-      "✖ Access control property could not be verified.";
+      "Access control property could not be verified.";
     list.appendChild(li);
     return;
   }
 
-  // OTHER PROPERTIES (NOT IMPLEMENTED YET)
+  // OTHER PROPERTIES (NOT IMPLEMENTED YET AT THE IPD STAGE)
   const li = document.createElement("li");
   li.innerText =
     "This security property is not yet implemented in the current prototype.";
