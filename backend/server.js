@@ -56,7 +56,7 @@ app.post("/verify", (req, res) => {
     case "access_control":
       response = {
         result: "Verified",
-        explanation: "Model analysed:\n${model}\n\nAccess control policy enforced: Only authorised users can access protected resources. Unauthorised users are denied access.",
+        explanation: `Model analysed:\n${model}\n\nAccess control policy enforced: Only authorised users can access protected resources. Unauthorised users are denied access.`,
         proofFile: "AccessControl.lean"
       };
       break;
@@ -64,7 +64,7 @@ app.post("/verify", (req, res) => {
     case "authentication":
       response = {
         result: "Verified",
-        explanation: "Model analysed:\n${model}\n\nOnly authenticated users can access the system.",
+        explanation: `Model analysed:\n${model}\n\nOnly authenticated users can access the system.`,
         proofFile: "Authentication.lean"
       };
       break;
@@ -72,7 +72,7 @@ app.post("/verify", (req, res) => {
     case "integrity":
       response = {
         result: "Verified",
-        explanation: "Model analysed:\n${model}\n\nIntegrity property enforced: Only authorised users are permitted to modify system data. Unauthorised modifications are prevented.",
+        explanation: `Model analysed:\n${model}\n\nIntegrity property enforced: Only authorised users are permitted to modify system data. Unauthorised modifications are prevented.`,
         proofFile: "Integrity.lean"
       };
       break;
