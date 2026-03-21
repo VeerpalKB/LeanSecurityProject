@@ -1,11 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f3f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 20px;
 }
 
 .container {
@@ -13,8 +10,10 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    width: 400px;
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
+    min-height: fit-content;
 }
 
 h1 {
@@ -48,4 +47,12 @@ button:hover {
     padding: 15px;
     border-radius: 8px;
     font-size: 0.9em;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#explanation-panel {
+    margin-top: 20px;
 }
