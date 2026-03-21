@@ -73,7 +73,7 @@
       document.getElementById("output").innerText = data.result;
       
       document.getElementById("backend-explanation").innerText = data.explanation;
-      
+
       // Displays the explanation of the verification result
       showExplanation(property, data.result);
     } catch (error) {
@@ -132,6 +132,27 @@ function showExplanation(property, output) {
     list.appendChild(li);
     return;
   }
+
+// AUTHENTICATION — VERIFIED CASE
+if (
+  property === "authentication" &&
+  output.toLowerCase().includes("verified")
+) {
+  const explanations = [
+    "Property verified: Authentication Security",
+    "Authenticated users: Alice, Bob",
+    "Unauthenticated user: Eve",
+    "Reason: Only authenticated users are permitted access to the system."
+  ];
+
+  explanations.forEach(text => {
+    const li = document.createElement("li");
+    li.innerText = text;
+    list.appendChild(li);
+  });
+
+  return;
+}
 
   // OTHER PROPERTIES (NOT IMPLEMENTED YET AT THE IPD STAGE)
   const li = document.createElement("li");
