@@ -60,18 +60,17 @@ This layered approach reflects best practice in system design and aligns with th
 
 ### Technologies Used
 
-Component	                                        Technology
+#### Components with corresponding Technology:
 
-Formal Verification	                                Lean 4
+Formal Verification using Lean 4
 
-Build Tool	                                         Lake
+Build Tool using Lake
 
-Backend Server	                             Node.js (JavaScript)
+Backend Server using Node.js (JavaScript)
 
-Frontend	                                   HTML, CSS, JavaScript
+Frontend using HTML, CSS & JavaScript
 
-Version Control	                                  Git & GitHub
-
+Version Control using Git & GitHub
 
 Note: JavaScript is used strictly for system integration and presentation. All security reasoning and verification logic is implemented in Lean.
 
@@ -108,6 +107,8 @@ The current prototype focuses on demonstrating feasibility and correctness of fo
 
 - End-to-end execution producing distinct verification outputs
 
+- Verification explanation for each output displayed on frontend
+
 - Clean version-controlled repository with appropriate .gitignore
 
 ### Pending / Future Work
@@ -117,8 +118,6 @@ The current prototype focuses on demonstrating feasibility and correctness of fo
 - More complex policy models
 
 - Improved frontend visualisation
-
-- Extended evaluation and analysis of verification results
 
 
 ### How to Run the Project (Prototype)
@@ -139,13 +138,13 @@ Node.js
 ### Build Lean Project
 lake build
 
-### Run Backend Server
+### How to run the prototype from Backend Server (terminal in VSCode)
 cd backend
 
 node server.js
 
 ### Access Frontend
-Open the frontend interface in a web browser (or via the configured server endpoint - http://localhost:3000 )
+Open the frontend interface in a web browser (or via the configured server endpoint shown in the terminal output - http://localhost:3000 )
 
 ### Academic Context
 
